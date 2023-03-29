@@ -3,7 +3,7 @@ if(!window.ThreeDit){
   ThreeDit=function(a,b){
     function G(a){
       p=a.clientX+g.scrollLeft;
-      q=a.clientY+g.scrollTop    
+      q=a.clientY+g.scrollTop        
     }
     function F(){
       var a=g.scrollLeft-t;
@@ -15,7 +15,7 @@ if(!window.ThreeDit){
       x=v+l.clientLeft-e.pageXOffset;
       y=w+l.clientTop-e.pageYOffset;
       t=g.scrollLeft;
-      u=g.scrollTop    
+      u=g.scrollTop        
     }
     function E(){
       r=e.innerWidth/2;
@@ -23,7 +23,7 @@ if(!window.ThreeDit){
       p=v=g.scrollLeft+r;
       q=w=g.scrollTop+s;
       x=v+l.clientLeft-e.pageXOffset;
-      y=w+l.clientTop-e.pageYOffset    
+      y=w+l.clientTop-e.pageYOffset        
     }
     function D(){
       n+=(p-n)*.05;
@@ -37,13 +37,13 @@ if(!window.ThreeDit){
         var k=0;
         var l=d[e].z;
         f.style[i]=x-h+"px "+(y-k)+"px";
-        f.style[j]="rotateY("+a+"deg) rotateX("+b+"deg)translate3d(0px,0px, "+l*c.zDepth+"px)"      
+        f.style[j]="rotateY("+a+"deg) rotateX("+b+"deg)translate3d(0px,0px, "+l*c.zDepth+"px)"            
       }
     }
     function C(){
       var a;
       for(var b=0;b<d.length;b++){
-        d[b].node.style[j]="none"      
+        d[b].node.style[j]="none"            
       }
       delete d;
       d=[];
@@ -54,25 +54,25 @@ if(!window.ThreeDit){
       var e=[c];
       d[0].z=c;
       for(var b=1;b<d.length;b++){
-        e.push(c=d[b].z==d[b-1].z?c:c+1)      
+        e.push(c=d[b].z==d[b-1].z?c:c+1)            
       }
       var f=e[e.length-1];
       for(var b=0;b<d.length;b++){
-        d[b].z=e[b]/f      
+        d[b].z=e[b]/f            
       }
     }
     function B(a){
       c.perspective=a;
-      k[h+"Perspective"]=c.perspective+"px"    
+      k[h+"Perspective"]=c.perspective+"px"        
     }
     function A(a,b,e){
       if(d.length>=c.maxElems-1)
         return;
       if(!e&&a.tagName=="DIV"&&a.childNodes.length>0){
-        d.push({node:a,z:b})      
+        d.push({node:a,z:b})            
       }
       for(var f=0;f<a.childNodes.length;f++){
-        A(a.childNodes[f],b+1,a.childNodes.length<2)      
+        A(a.childNodes[f],b+1,a.childNodes.length<2)            
       }
     }
     function z(a){
@@ -90,18 +90,10 @@ if(!window.ThreeDit){
       k.backgroundImage=m(g).getPropertyValue("background-image");
       k.backgroundColor=m(g).getPropertyValue("background-color");
       C();
-      if(!c.initialized){
-        E();
-        n=p;
-        o=q;
-        e.addEventListener("resize",E);
-        e.addEventListener("scroll",F);
-        setInterval(D,1e3/60)      
-      }
-      c.initialized=tru    
+      c.initialized=tru        
     }
     var c={
-      zDepth:300,maxElems:100,perspective:500,initialized:fals    
+      zDepth:300,maxElems:100,perspective:500,initialized:fals        
     }
     ;
     var d=[];
@@ -130,7 +122,7 @@ if(!window.ThreeDit){
     c.recollectElems=C;
     c.render=D;
     c.changePerspective=B;
-    return c  
+    return c    
   }
   (window,document);
   ThreeDit.init(document);
