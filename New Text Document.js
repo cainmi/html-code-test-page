@@ -1,22 +1,5 @@
 javascript:
-if(!window.ThreeDit){
-  ThreeDit=function(a,b){
-    function G(a){
-      p=a.clientX+g.scrollLeft;
-      q=a.clientY+g.scrollTop        
-    }
-    function F(){
-      var a=g.scrollLeft-t;
-      var b=g.scrollTop-u;
-      p=v=g.scrollLeft+r;
-      q=w=g.scrollTop+s;
-      n+=a;
-      o+=b;
-      x=v+l.clientLeft-e.pageXOffset;
-      y=w+l.clientTop-e.pageYOffset;
-      t=g.scrollLeft;
-      u=g.scrollTop        
-    }
+(function{
     function E(){
       r=e.innerWidth/2;
       s=e.innerHeight/2;
@@ -37,7 +20,7 @@ if(!window.ThreeDit){
         var k=0;
         var l=d[e].z;
         f.style[i]=x-h+"px "+(y-k)+"px";
-        f.style[j]="rotateY("+a+"deg) rotateX("+b+"deg)translate3d(0px,0px, "+l*c.zDepth+"px)"            
+              
       }
     }
     function C(){
